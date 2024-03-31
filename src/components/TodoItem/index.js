@@ -1,18 +1,17 @@
-// Write your code here
 import './index.css'
 
 const TodoItem = props => {
-  const {todoItem, onDelete} = props
-  const {title, id} = todoItem
+  const {todoDetails, deleteTodo} = props
+  const {id, title} = todoDetails
 
-  const deleteTodo = () => {
-    onDelete(id)
+  const onDeleteTodo = () => {
+    deleteTodo(id)
   }
 
   return (
-    <li className="list-item-container">
+    <li className="todo-item">
       <p className="title">{title}</p>
-      <button className="delete-button" type="button" onClick={deleteTodo}>
+      <button type="button" className="delete-btn" onClick={onDeleteTodo}>
         Delete
       </button>
     </li>
